@@ -48,10 +48,61 @@ fscanf(fp,"%d%s%d%f",&users[i].kh,users[i].name,&users[i].mm,&users[i].ye);
 
 for(j=1;j<5;j++)
 {
-printf("请输入卡号:");
-scanf("%d",&k);
-printf("请输入密码:");
-scanf("%d",&mm);
+
+	//申请一块内存空间，将其地址赋值给指针newNodeP 
+	Account * newNodeP=(Account *)malloc(sizeof(Account));
+	
+	//为节点赋值 
+	if(language==1)
+	{
+		printf("输入姓名：\n");
+	}
+	else if(language==2)
+	{
+		printf("Input name:\n");
+	}
+	scanf("%s",newNodeP->name);
+	
+	if(language==1)
+	{
+		printf("输入身份证：\n");
+	}
+	else if(language==2)
+	{
+		printf("Input idCard:\n");
+	}
+	scanf("%s",newNodeP->idCard);
+	
+	if(language==1)
+	{
+		printf("输入电话：\n");
+	}
+	else if(language==2)
+	{
+		printf("Input tel:\n");
+	}
+	scanf("%s",newNodeP->tel);
+	
+	if(language==1)
+	{
+		printf("输入卡号：\n");
+	}
+	else if(language==2)
+	{
+		printf("Input username:\n");
+	}
+	scanf("%s",newNodeP->username);
+	
+	if(language==1)
+	{
+		printf("输入密码：\n");
+	}
+	else if(language==2)
+	{
+		printf("Input password:\n");
+	}
+	scanf("%s",newNodeP->password);
+	
 for(i=0;i<3;i++)
 if(k==users[i].kh&&mm==users[i].mm)
 {
@@ -64,4 +115,19 @@ printf ("输入错误，你还剩余%d次机会",3-j);
 system("pause");
 system("cls");
 }
+}
+int main()
+{
+	printf("欢迎来到王者银行\n");
+	printf("Welcome to XXX bank\n");
+	
+	printf("按1，中文服务\n");
+	printf("Press 2，English Service\n");
+	scanf("%d",&language);
+	
+	showMenu();
+	
+	printLinkedList();
+	
+	return 0;	
 }
