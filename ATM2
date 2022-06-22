@@ -4,20 +4,22 @@
 void welcome(); 
 void Login();
 struct ATM
-{int kh;
+{
+int kh;
  char name[2];
  int mm;
  float ye;
 
 }users[6];
 void main()
-{welcome();
+{
+welcome();
 Login();
-	FILE *fp;
+FILE *fp;
 int i;
-    fp=fopen("C:\\Users\\cqie\\Desktop\\ATM.txt","r");
-      printf("输入用户信息\n");
-      printf("用户 卡号 密码 余额\n");
+   fp=fopen("C:\\Users\\cqie\\Desktop\\ATM.txt","r");
+    printf("输入用户信息\n");
+    printf("用户 卡号 密码 余额\n");
 for(i=0;i<6;i++)
     fscanf(fp,"%d%s%d%f",&users[i].kh,users[i].name,&users[i].mm,&users[i].ye);
  for(i=0;i<6;i++)
@@ -25,12 +27,14 @@ for(i=0;i<6;i++)
 }
 void welcome()
 
-{printf("****************************\n");
+{
+printf("****************************\n");
 printf("******欢迎来到ATM取款机******\n");
 printf("****************************\n");
 }
 void Login()
-{ATM users[6];
+{
+ATM users[6];
 int i,j,kh,mm,k;
 FILE *fp;
 if((fp=fopen("C:\\Users\\cqie\\Desktop\\ATM.txt","r"))==NULL)
@@ -43,13 +47,15 @@ for(i=0;i<4;i++)
 fscanf(fp,"%d%s%d%f",&users[i].kh,users[i].name,&users[i].mm,&users[i].ye);
 
 for(j=1;j<5;j++)
-{printf("请输入卡号:");
+{
+printf("请输入卡号:");
 scanf("%d",&k);
 printf("请输入密码:");
 scanf("%d",&mm);
 for(i=0;i<3;i++)
 if(k==users[i].kh&&mm==users[i].mm)
-{printf("欢迎使用");
+{
+printf("欢迎使用");
 break;
 }
 else 
